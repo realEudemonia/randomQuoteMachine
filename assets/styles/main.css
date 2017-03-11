@@ -1,8 +1,35 @@
 body {
+    font-family: Droid Serif;
+}
 
+p {
+    font-family: Ranga;
+    font-size: 4em;
+    margin-top: 15px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+h1 {
+    font-family: Baloo Bhaina;
+    font-size: 6em;
+    text-align: center;
+    color: white;
+}
+
+h3{
+    text-align: right;
+    margin: 0px 75px;
 }
 
 .quoteDisplay {
+    margin-top: 300px;
     border: 2px solid #020105;
-    margin-top: 400px;
+    font-family: Baloo Bhaina;
+    background-color: white;
+}
+
+.btnRow{
+    margin: 20px 75px;
+    float: right;
 }
