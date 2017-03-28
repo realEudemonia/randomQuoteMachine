@@ -1,5 +1,6 @@
 body {
     font-family: Droid Serif;
+    background-color: #4AC282;
 }
 
 p {
@@ -27,6 +28,7 @@ h3{
     border: 2px solid #020105;
     font-family: Baloo Bhaina;
     background-color: white;
+    color: #4AC282;
 }
 
 .btnRow{

@@ -3,21 +3,27 @@
  */
 //TODO research quote API and how to utilize jQuery JSON
 //TODO research API for tweeting and email subscription
-var colors = ['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857"];
+
 init();
 
 function init(){
-    var color = Math.floor(Math.random() * colors.length);
-    document.body.style.backgroundColor = colors[color];
-    document.querySelector(".quoteDisplay").style.color = colors[color];
+    $.getJSON("http://quotes.rest/qod.json", function(json) {
+        $(".quotation").html(JSON.stringify(json));
+    });
 }
 
 
+$(".btnRow").click(function(){
+    $(".quoteDisplay").slideToggle("slow");
+    init();
+    $(".quoteDisplay").slideToggle("slow");
+});
 
 
 
 
-//deprecated
+
+//deprecated, was going to color switch but contrast wasn't right in a lot of cases.
 // function randomColor() {
 //     //pick a red from 0 to 255
 //     var r = Math.floor(Math.random() * 256);
