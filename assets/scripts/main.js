@@ -4,13 +4,11 @@
 //TODO research quote API and how to utilize jQuery JSON
 //TODO research API for tweeting and email subscription
 
-init();
 
-function init(){
+$(document).ready(function(){
     $.getJSON("http://quotes.rest/qod.json", function(json) {
-        $(".quotation").html(JSON.stringify(json));
+            $("#quote").html((json.value.quotes));
     });
-}
 
 
 $(".btnRow").click(function(){
@@ -20,7 +18,7 @@ $(".btnRow").click(function(){
 });
 
 
-
+// http://quotes.rest/qod.json
 
 
 //deprecated, was going to color switch but contrast wasn't right in a lot of cases.
