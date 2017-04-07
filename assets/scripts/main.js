@@ -1,25 +1,40 @@
 /**
  * Created by jason on 3/7/17.
  */
-//TODO research quote API and how to utilize jQuery JSON
 //TODO research API for tweeting and email subscription
+//TODO tinker with how to get different quotes via a different categories
 
+init();
 
-$(document).ready(function(){
-    $.getJSON("http://quotes.rest/qod.json", function(json) {
-            $("#quote").html((json.value.quotes));
+function init() {
+    grabQuote();
+}
+
+function grabQuote() {
+    $.getJSON("http://quotes.stormconsultancy.co.uk/random.json", function(json) {
+        $("#quote").html((json.quote));
+        $("#author").html((json.author));
+        console.log(json.author)
     });
-
+}
 
 $(".btnRow").click(function(){
     $(".quoteDisplay").slideToggle("slow");
-    init();
+    grabQuote();
     $(".quoteDisplay").slideToggle("slow");
 });
 
 
 // http://quotes.rest/qod.json
 
+//deprecated, first testing to get JSON to work
+// function grabQuote() {
+//     $.getJSON("http://quotes.rest/qod.json", function(json) {
+//         $("#quote").html((json.contents.quotes[0].quote));
+//         $("#author").html((json.contents.quotes[0].author));
+//         console.log(json.contents.quotes[0].author)
+//     });
+// }
 
 //deprecated, was going to color switch but contrast wasn't right in a lot of cases.
 // function randomColor() {
