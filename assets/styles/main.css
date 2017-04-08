@@ -24,7 +24,7 @@ h3{
 }
 
 .quoteDisplay {
-    margin-top: 300px;
+    margin-top: 150px;
     border: 2px solid #020105;
     font-family: Baloo Bhaina;
     background-color: white;
@@ -35,3 +35,8 @@ h3{
     margin: 20px 75px;
     float: right;
 }
+ .tweetBtn{
+     margin: 20px 25px;
+     float: left;
+     font-family: Baloo Bhaina;
+ }

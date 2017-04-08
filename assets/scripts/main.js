@@ -1,9 +1,8 @@
 /**
  * Created by jason on 3/7/17.
  */
-//TODO research API for tweeting and email subscription
-//TODO tinker with how to get different quotes via a different categories
-
+var quote;
+var author;
 init();
 
 function init() {
@@ -12,9 +11,13 @@ function init() {
 
 function grabQuote() {
     $.getJSON("http://quotes.stormconsultancy.co.uk/random.json", function(json) {
-        $("#quote").html((json.quote));
-        $("#author").html((json.author));
-        console.log(json.author)
+        quote = '"' + (json.quote) + '"';
+        author = '- ' + (json.author);
+        $("#quote").html(quote);
+        $("#author").html(author);
+        quote2 = encodeURI(quote);
+        author2 = encodeURI(author);
+        $("#link").attr("href",'https://twitter.com/intent/tweet?text=' + quote2 + " " + author2);
     });
 }
 
